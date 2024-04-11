@@ -1,0 +1,62 @@
+! Title: ISP Blockpage killer and debloater
+! Last modified: %timestamp%
+! Expires: 7 days 
+! Filterlist ini mencegah pengguna dialihkan ke halaman "website diblokir" dan mencoba untuk menghapus berbagai konten yang tidak berguna dari website tersebut jika pengguna memilih untuk datang ke website tersebut (biar ga nyedot kuota 😁).
+! Filterlist ini juga mencegah redirect ke website "website tidak ada".
+! Filterlist ini tidak bekerja jika website dibawah yang menyamar menjadi website yang diblokir!
+! If you are wondering which sites block go to this page to check it: trustpositif.kominfo.go.id
+
+! blocked site landing page
+lamanlabuh.aduankonten.id^$doc
+27.54.116.70^$doc
+internetpositif.uzone.id^$doc
+internetpositif.id^$doc
+internetbaik.telkomsel.com^$doc
+restricted.tri.co.id^$doc
+netsafe.indosatooredoo.com^$doc
+trustpositif.moratelindo.io^$doc
+www.smartfren.com/insan$doc
+blockpage.xlaxiata.id^$doc
+
+! Site non-existent landing page
+mercusuar.uzone.id^$doc
+
+! indihome filters
+! defuse redirect
+internetpositif.id,mercusuar.uzone.id,internetpositif.uzone.id##+js(set-constant, timeleft, null)
+internetpositif.id,mercusuar.uzone.id,internetpositif.uzone.id##+js(set-constant, url_redirect, null)
+! kill redirect API
+||redirect.uzone.co.id/api/list_push_mercusuar$xhr,doc
+||apis.uzone.id/api/list_push_mercusuar$xhr,doc
+||redirect.uzone.co.id/api/list_push$xhr
+||apis.uzone.id/api/list_push$xhr
+! Newsfeed (no one needs it)
+mercusuar.uzone.id##.footerr
+mercusuar.uzone.id##.app_bottom
+||apis1.uzone.id/uzone/mercusuar_get_news$xhr
+internetpositif.id,internetpositif.uzone.id##.text-floating
+internetpositif.id,internetpositif.uzone.id##.main-body
+||apis1.uzone.id/uzone/getDataInpos$xhr
+
+! Telkomsel blocked site landing page bloat
+||/ads.campaign.js$script,domain=internetbaik.telkomsel.com
+||/games/$frame,domain=internetbaik.telkomsel.com
+||/news.js$script,domain=internetbaik.telkomsel.com
+||/rss$xhr,domain=internetbaik.telkomsel.com
+
+! Disable Tri redirector (white page is expected, redirects to Bima+)
+restricted.tri.co.id##+js(aopr, window.location.href)
+restricted.tri.co.id##+js(refresh-defuser)
+
+! Disable Tri redirector (white page is expected)
+restricted.tri.co.id##+js(aopr, window.location.href)
+restricted.tri.co.id##+js(refresh-defuser)
+
+! Disable Indosat Ooredoo redirector (white page is expected)
+netsafe.indosatooredoo.com##+js(set, redirect, 0)
+
+! Smartfren newsfeed
+www.smartfren.com##+js(set-constant, jsonData, {}):matches-path(/insan)
+www.smartfren.com##.pt-tabs:matches-path(/insan)
+www.smartfren.com##.entry-title:matches-path(/insan)
+www.smartfren.com##.custom-tab:matches-path(/insan)
