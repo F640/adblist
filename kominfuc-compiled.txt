@@ -1,0 +1,40 @@
+! Title: ISP Blockpage killer and debloater
+! Last modified: 11 Apr 2024 13:30 UTC
+! Expires: 7 days 
+! Filter ini didesain untuk uBlock Origin
+
+lamanlabuh.aduankonten.id^$doc
+27.54.116.70^$doc
+internetpositif.uzone.id^$doc
+internetpositif.id^$doc
+internetbaik.telkomsel.com^$doc
+restricted.tri.co.id^$doc
+netsafe.indosatooredoo.com^$doc
+trustpositif.moratelindo.io^$doc
+www.smartfren.com/insan$doc
+blockpage.xlaxiata.id^$doc
+mercusuar.uzone.id^$doc
+internetpositif.id,mercusuar.uzone.id,internetpositif.uzone.id##+js(set-constant, timeleft, null)
+internetpositif.id,mercusuar.uzone.id,internetpositif.uzone.id##+js(set-constant, url_redirect, null)
+||redirect.uzone.co.id/api/list_push_mercusuar$xhr,doc
+||apis.uzone.id/api/list_push_mercusuar$xhr,doc
+||redirect.uzone.co.id/api/list_push$xhr
+||apis.uzone.id/api/list_push$xhr
+mercusuar.uzone.id##.footerr
+mercusuar.uzone.id##.app_bottom
+||apis1.uzone.id/uzone/mercusuar_get_news$xhr
+internetpositif.id,internetpositif.uzone.id##.text-floating
+internetpositif.id,internetpositif.uzone.id##.main-body
+||apis1.uzone.id/uzone/getDataInpos$xhr
+||/ads.campaign.js$script,domain=internetbaik.telkomsel.com
+||/games/$frame,domain=internetbaik.telkomsel.com
+||/news.js$script,domain=internetbaik.telkomsel.com
+||/rss$xhr,domain=internetbaik.telkomsel.com
+internetbaik.telkomsel.com##.container,footer
+restricted.tri.co.id##+js(aopr, window.location.href)
+restricted.tri.co.id##+js(refresh-defuser)
+restricted.tri.co.id##+js(aopr, window.location.href)
+restricted.tri.co.id##+js(refresh-defuser)
+netsafe.indosatooredoo.com##+js(set, redirect, 0)
+www.smartfren.com##+js(set-constant, jsonData, {}):matches-path(/insan)
+www.smartfren.com##.pt-tabs,.entry-title,.custom-tab:matches-path(/insan)
