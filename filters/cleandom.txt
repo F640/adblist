@@ -4,6 +4,7 @@
 ! Filterlist ini buat bersihkan bagian yang tidak berguna biar makin fokus baca wiki di Fandom
 ! Filter ini didesain untuk uBlock Origin
 
+fandom.com###age-gate
 fandom.com##.page__right-rail
 fandom.com###mixed-content-footer
 fandom.com##.global-navigation
