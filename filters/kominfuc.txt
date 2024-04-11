@@ -4,7 +4,8 @@
 ! Filterlist ini mencegah pengguna dialihkan ke halaman "website diblokir" dan mencoba untuk menghapus berbagai konten yang tidak berguna dari website tersebut jika pengguna memilih untuk datang ke website tersebut (biar ga nyedot kuota 😁).
 ! Filterlist ini juga mencegah redirect ke website "website tidak ada".
 ! Filterlist ini tidak bekerja jika website dibawah yang menyamar menjadi website yang diblokir!
-! If you are wondering which sites block go to this page to check it: trustpositif.kominfo.go.id
+! Jika kamu pensasran website mana saja diblokir cek website ini: trustpositif.kominfo.go.id
+! Filter ini didesain untuk uBlock Origin
 
 ! blocked site landing page
 lamanlabuh.aduankonten.id^$doc
@@ -43,6 +44,7 @@ internetpositif.id,internetpositif.uzone.id##.main-body
 ||/games/$frame,domain=internetbaik.telkomsel.com
 ||/news.js$script,domain=internetbaik.telkomsel.com
 ||/rss$xhr,domain=internetbaik.telkomsel.com
+internetbaik.telkomsel.com##.container,footer
 
 ! Disable Tri redirector (white page is expected, redirects to Bima+)
 restricted.tri.co.id##+js(aopr, window.location.href)
@@ -57,6 +59,4 @@ netsafe.indosatooredoo.com##+js(set, redirect, 0)
 
 ! Smartfren newsfeed
 www.smartfren.com##+js(set-constant, jsonData, {}):matches-path(/insan)
-www.smartfren.com##.pt-tabs:matches-path(/insan)
-www.smartfren.com##.entry-title:matches-path(/insan)
-www.smartfren.com##.custom-tab:matches-path(/insan)
+www.smartfren.com##.pt-tabs,.entry-title,.custom-tab:matches-path(/insan)
