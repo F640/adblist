@@ -1,0 +1,22 @@
+! Title: Bypass Bra1nly Rguru
+! Last modified: %timestamp%
+! Expires: 7 days 
+! Dari judulnya pasti sudah tahu filterlist ini ngapain
+! Filterlist ini mungkin akan membuat pengguna kena log out dari akun
+
+! berainly (b-pass log-in)
+brainly.co.id##+js(set-local-storage-item, as/current_blockade_state_timestamp, $remove$)
+brainly.co.id##+js(set-local-storage-item, as/current_blockade_state, $remove$)
+brainly.co.id##+js(set-local-storage-item, simple-funnel-denied-day-occurences-set-date, $remove$)
+brainly.co.id##+js(set-local-storage-item, simple-funnel-denied-day-occurences, $remove$)
+brainly.co.id##+js(set-local-storage-item, as/current_blockade_state_timestamp, $remove$)
+brainly.co.id##+js(set-local-storage-item, registration-toplayer/expires, $remove$)
+brainly.co.id##+js(set-local-storage-item, registration-toplayer/cursor, $remove$)
+brainly.co.id##+js(set-local-storage-item, simple-funnel-cursor, $remove$)
+
+! rguru (b-pass login juga)
+roboguru.ruangguru.com##.lock-discussions:remove-class(lock-discussions)
+roboguru.ruangguru.com##.qns_explanation_answer:remove-class(qns_explanation_answer)
+roboguru.ruangguru.com##.qns_short_answer:remove-class(qns_short_answer)
+roboguru.ruangguru.com##.css-1c77zrq.chakra-stack
+roboguru.ruangguru.com##.css-ujz8lb.chakra-stack
