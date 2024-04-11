@@ -3,6 +3,7 @@
 ! Expires: 7 days 
 ! Dari judulnya pasti sudah tahu filterlist ini ngapain
 ! Filterlist ini mungkin akan membuat pengguna kena log out dari akun
+! Filter ini didesain untuk uBlock Origin
 
 ! berainly (b-pass log-in)
 brainly.co.id##+js(set-local-storage-item, as/current_blockade_state_timestamp, $remove$)
